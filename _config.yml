@@ -7,6 +7,20 @@ url: "https://TU_USUARIO.github.io/TU_REPOSITORIO" # ¡Importante! Cámbialo des
 logo: /assets/logo.png # Opcional: si quieres poner un logo
 
 # ---------------- #
+#    Sitio Web     #
+# ---------------- #
+title: "Notas del Chatbot de IA"
+description: "Actualizaciones, notas de parche y noticias sobre el desarrollo de nuestro chatbot de IA."
+
+# URL del sitio SIN el nombre del repo
+url: "https://santelot.github.io" 
+
+# IMPORTANTE: El nombre de tu repositorio precedido por un "/"
+baseurl: "/Gnius_Patcher" 
+
+logo: /assets/GNIUS_HELP_WHITE.png # Opcional
+
+# ---------------- #
 #     Jekyll       #
 # ---------------- #
 theme: null
