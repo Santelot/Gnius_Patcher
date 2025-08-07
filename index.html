@@ -17,7 +17,8 @@ title: "Últimas Noticias"
       <li>
         <span class="post-meta">{{ note.date | date: "%d de %b, %Y" }}</span>
         <h3>
-          <a class="post-link" href="{{ note.url | relative_url }}">
+          <!-- 👇 ENLACE CORREGIDO AQUÍ 👇 -->
+          <a class="post-link" href="{{ site.baseurl }}{{ note.url }}">
             {{ note.title }}
             {% if note.version %}
               <span class="version-tag">v{{ note.version }}</span>
@@ -31,6 +32,54 @@ title: "Últimas Noticias"
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">Suscríbete <a href="{{ "/feed.xml" | relative_url }}">vía RSS</a> para no perderte ninguna actualización.</p>
+  <!-- 👇 ENLACE CORREGIDO AQUÍ 👇 -->
+  <p class="rss-subscribe">Suscríbete <a href="{{ site.baseurl }}/feed.xml">vía RSS</a> para no perderte ninguna actualización.</p>
 
 </div>
+```4.  Guarda los cambios (`Commit changes`).
+
+#### **Paso 3: Corrige la Plantilla Principal (`_layouts/default.html`)**
+
+Esta plantilla genera el enlace al CSS y el enlace del título principal para volver al inicio.
+
+1.  Abre la carpeta `_layouts` y edita el archivo `default.html`.
+2.  **Borra todo el contenido** y reemplázalo con este código corregido.
+
+`_layouts/default.html` (Corregido)
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf--8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  
+  <!-- 👇 ENLACE CORREGIDO AQUÍ 👇 -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  
+  {% feed_meta %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <!-- 👇 ENLACE CORREGIDO AQUÍ 👇 -->
+      <a class="site-title" rel="author" href="{{ site.baseurl }}/">{{ site.title | escape }}</a>
+      <nav class="site-nav">
+        <!-- Aquí puedes añadir más enlaces en el futuro, como un "Archivo" -->
+      </nav>
+    </div>
+  </header>
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}. Creado con Jekyll y alojado en GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
