@@ -9,6 +9,7 @@ logo: /assets/logo.png # Opcional: si quieres poner un logo
 # ---------------- #
 #     Jekyll       #
 # ---------------- #
+theme: null
 plugins:
   - jekyll-feed # Para generar un feed RSS en /feed.xml
 
