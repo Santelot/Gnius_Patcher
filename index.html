@@ -1,0 +1,36 @@
+---
+layout: default
+title: "Últimas Noticias"
+---
+
+<div class="home">
+
+  <h1 class="page-heading">{{ page.title }}</h1>
+
+  <p class="description">
+    Bienvenido al centro de noticias y actualizaciones de nuestro chatbot. Aquí encontrarás todas las notas de parche, mejoras y anuncios importantes.
+  </p>
+
+  <ul class="post-list">
+    {% assign sorted_notes = site.patchnotes | sort: 'date' | reverse %}
+    {% for note in sorted_notes %}
+      <li>
+        <span class="post-meta">{{ note.date | date: "%d de %b, %Y" }}</span>
+        <h3>
+          <a class="post-link" href="{{ note.url | relative_url }}">
+            {{ note.title }}
+            {% if note.version %}
+              <span class="version-tag">v{{ note.version }}</span>
+            {% endif %}
+          </a>
+        </h3>
+        {% if note.excerpt %}
+          <p>{{ note.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">Suscríbete <a href="{{ "/feed.xml" | relative_url }}">vía RSS</a> para no perderte ninguna actualización.</p>
+
+</div>
