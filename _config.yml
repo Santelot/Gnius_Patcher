@@ -4,13 +4,13 @@
 title: "Notas del Chatbot de IA"
 description: "Actualizaciones, notas de parche y noticias sobre el desarrollo de nuestro chatbot de IA."
 
-# URL del sitio SIN el nombre del repo
+# Tu dominio de GitHub Pages
 url: "https://santelot.github.io" 
 
-# IMPORTANTE: El nombre de tu repositorio precedido por un "/"
+# El nombre de tu repositorio, precedido por una barra
 baseurl: "/Gnius_Patcher" 
 
-logo: /assets/GNIUS_HELP_WHITE.png # Opcional
+logo: "/assets/GNIUS_HELP_WHITE.png" # Opcional
 
 # ---------------- #
 #     Jekyll       #
