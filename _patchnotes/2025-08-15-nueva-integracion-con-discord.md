@@ -1,17 +1,28 @@
 ---
-title: "El Título Descriptivo de Tu Actualización"
-date: YYYY-MM-DD
-version: "X.X.X"
-excerpt: "Un resumen corto (una o dos frases) que aparecerá en la página principal."
+# Cambia el título para que sea descriptivo
+title: "Título del Parche o Noticia"
+
+# IMPORTANTE: Reemplaza esto con la fecha actual (Año-Mes-Día)
+date: 2025-08-16
+
+# Escribe la nueva versión. Si no es un parche, puedes borrar esta línea.
+version: "0.3.0" 
+
+# Escribe un resumen de 1-2 frases. Aparecerá en la página de inicio.
+excerpt: "Este es el resumen corto que se mostrará en la lista de noticias principal."
 ---
 
-Aquí escribes todo el contenido de tu nota de parche.
+## Cambios Principales
 
-Puedes usar **Markdown** para dar formato.
+Aquí comienzas a escribir todo el contenido de tu nota de parche.
 
-### Subtítulos para organizar
-* Usa listas para los cambios.
-* Es muy fácil de leer.
+*   Puedes usar listas para enumerar cambios.
+*   **Texto en negrita** para resaltar cosas importantes.
 
-1. También listas numeradas.
-2. Son muy útiles para pasos.
+### Nuevas Funcionalidades
+1.  Funcionalidad A.
+2.  Funcionalidad B.
+
+### Corrección de Errores
+*   Se arregló un problema donde el bot no respondía.
+*   Se optimizó la velocidad de respuesta.
