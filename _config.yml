@@ -1,0 +1,31 @@
+# ---------------- #
+#    Sitio Web     #
+# ---------------- #
+title: "Notas del Chatbot de IA"
+description: "Actualizaciones, notas de parche y noticias sobre el desarrollo de nuestro chatbot de IA."
+url: "https://TU_USUARIO.github.io/TU_REPOSITORIO" # ¡Importante! Cámbialo después
+logo: /assets/logo.png # Opcional: si quieres poner un logo
+
+# ---------------- #
+#     Jekyll       #
+# ---------------- #
+theme: minima
+plugins:
+  - jekyll-feed # Para generar un feed RSS en /feed.xml
+
+# ---------------- #
+#   Colecciones    #
+# ---------------- #
+# Aquí definimos nuestras notas de parche para mantenerlas separadas de un blog normal.
+collections:
+  patchnotes:
+    output: true
+    permalink: /patch/:title/ # URL amigable para cada nota, ej: /patch/actualizacion-0-1-0/
+
+# Valores por defecto para la colección, para no tener que repetirlos en cada archivo.
+defaults:
+  - scope:
+      path: ""
+      type: "patchnotes"
+    values:
+      layout: "patch"
