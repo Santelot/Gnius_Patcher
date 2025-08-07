@@ -9,7 +9,6 @@ logo: /assets/logo.png # Opcional: si quieres poner un logo
 # ---------------- #
 #     Jekyll       #
 # ---------------- #
-theme: minima
 plugins:
   - jekyll-feed # Para generar un feed RSS en /feed.xml
 
