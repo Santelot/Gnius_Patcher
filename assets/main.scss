@@ -1,49 +1,56 @@
 ---
-# Este archivo está vacío, pero es necesario para que Jekyll procese el CSS.
+// --- Archivo de Estilos Principal ---
 ---
-@import "minima/skins/dark"; // Usamos el skin oscuro de Minima como base
-@import "minima/initialize";  // Importamos los estilos base del tema Minima
 
-// --- Modificaciones personalizadas ---
+// 1. Importamos la base del tema Minima. Esto nos da la estructura.
+@import "minima/initialize";
 
+// 2. Definimos manualmente nuestra paleta de colores oscuros.
+//    Esto reemplaza la línea que causaba el error.
+$background-color: #121212;
+$text-color: #e0e0e0;
+$brand-color: #bb86fc; // Color principal para links y acentos
+$grey-color-light: #333333; // Bordes y líneas
+$grey-color-dark: #e0e0e0; // Texto del footer
+
+// 3. Aplicamos los colores a los elementos principales.
 body {
+  background-color: $background-color;
+  color: $text-color;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  background-color: #121212;
-  color: #e0e0e0;
 }
 
-.site-title {
-  font-weight: bold;
-  letter-spacing: -1px;
-}
-
-.post-link {
-  font-size: 26px;
-  color: #bb86fc; // Un morado que resalta en fondos oscuros
+h1, h2, h3, h4, h5, h6 {
+  color: #f5f5f5; // Títulos un poco más brillantes
 }
 
 a {
-  color: #03dac6; // Un cyan para otros enlaces
+  color: $brand-color;
   text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-h1, h2, h3 {
-  font-weight: 600;
-  border-bottom: 1px solid #333;
-  padding-bottom: 10px;
+  &:hover {
+    color: lighten($brand-color, 10%);
+    text-decoration: underline;
+  }
 }
 
+.site-title {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+// 4. Estilos personalizados para la lista de parches y etiquetas.
 .post-list h3 {
   border-bottom: none;
   margin-bottom: 0.5rem;
 }
 
+.post-link {
+  font-size: 26px;
+}
+
 // Etiqueta de versión
 .version-tag {
-  background-color: #bb86fc;
+  background-color: $brand-color;
   color: #121212;
   border-radius: 4px;
   padding: 4px 8px;
@@ -59,9 +66,24 @@ h1, h2, h3 {
   vertical-align: text-top;
 }
 
-// Código y preformateado
+// Bloques de código
 pre, code {
   background-color: #1e1e1e;
-  border: 1px solid #333;
+  border: 1px solid $grey-color-light;
   border-radius: 4px;
+}
+
+// Headers y Footers
+.site-header {
+  border-bottom-color: $grey-color-light;
+}
+.site-footer {
+  border-top-color: $grey-color-light;
+}
+
+// Descripción en la página principal
+.description {
+  color: #a0a0a0;
+  font-size: 1.1em;
+  margin-bottom: 2em;
 }
